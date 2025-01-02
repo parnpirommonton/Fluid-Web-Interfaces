@@ -17,9 +17,9 @@ JavaScript:
 let WebpageTitle = "This is my Webpage!";
 
 HTML:
-'''
+```
 <p>{WebpageTitle}</p>
-'''
+```
 
 The HTML would then render 'This is my Webpage!' on the webpage. If the user were to then change the value of the 'WebpageTitle' variable and then run the 'onStateChanged()' function, the value on the webpage would then update to reflect the current value.
 
@@ -27,10 +27,10 @@ Although the binding syntax was intended for JavaScript variables It does also s
 The following syntax is valid.
 
 HTML:
-'''
+```
 <p>{new Date()}</p>
 <p>{someFunction()}</p>
-'''
+```
 
 #### Render Command
 
@@ -39,9 +39,9 @@ This command is used to inject partial HTML files (which are marked by beginning
 The syntax for the command is as follows:
 
 HTML:
-'''
+```
 @render "./_navigation.htm"
-'''
+```
 
 This would add the contents of the '_navigation.htm' file into the current one where the render command is located.
 
@@ -51,7 +51,7 @@ If statements evaluate JavaScript conditions and render HTML code depending on i
 If statements can be embedded into your webpage using the following syntax:
 
 HTML:
-'''
+```
 @If (Quality > 0.75)
 {
     <p>Excellent Work!</p>
@@ -64,7 +64,7 @@ else
 {
     <p>Horrible.</p>
 }
-'''
+```
 
 Again, these the evaluation can be refreshed by using the 'onStateChanged()' function.
 
