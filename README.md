@@ -13,11 +13,15 @@ This is the parser that reads the source HTML file with the custom syntax and co
 This allows the user of this framework to have JavaScript variable values to be rendered on webpages at will. The variable content is rendered whenever the user runs the 'onStateChanged()' function.
 The user can type wherever they would normally type out text within a HTML document (e.g. attribute values, or innerHTML) the name of the JavaScript variable surrounded by curly braces.
 
-JavaScript:
-let WebpageTitle = "This is my Webpage!";
-
-HTML:
 ```
+// This is JavaScript code.
+
+let WebpageTitle = "This is my Webpage!";
+```
+
+```
+<!-- This is HTML code. -->
+
 <p>{WebpageTitle}</p>
 ```
 
@@ -26,8 +30,9 @@ The HTML would then render 'This is my Webpage!' on the webpage. If the user wer
 Although the binding syntax was intended for JavaScript variables It does also support execution of JavaScript functions.
 The following syntax is valid.
 
-HTML:
 ```
+<!-- This is HTML code. -->
+
 <p>{new Date()}</p>
 <p>{someFunction()}</p>
 ```
@@ -38,8 +43,9 @@ This command is used to inject partial HTML files (which are marked by beginning
 
 The syntax for the command is as follows:
 
-HTML:
 ```
+<!-- This is HTML code. -->
+
 @render "./_navigation.htm"
 ```
 
@@ -50,8 +56,9 @@ This would add the contents of the '_navigation.htm' file into the current one w
 If statements evaluate JavaScript conditions and render HTML code depending on if the condition returns true.
 If statements can be embedded into your webpage using the following syntax:
 
-HTML:
 ```
+<!-- This is HTML code. -->
+
 @If (Quality > 0.75)
 {
     <p>Excellent Work!</p>
