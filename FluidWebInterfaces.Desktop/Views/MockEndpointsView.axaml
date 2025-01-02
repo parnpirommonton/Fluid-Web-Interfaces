@@ -1,0 +1,106 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:FluidWebInterfaces.Desktop.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="FluidWebInterfaces.Desktop.Views.MockEndpointsView"
+             x:DataType="viewModels:MockEndpointsViewModel">
+    <Grid RowDefinitions="Auto, *" Background="#161d35">
+        
+        <StackPanel Grid.Row="0">
+            <Grid ColumnDefinitions="Auto, Auto, *" Margin="25">
+                <Svg Grid.Column="0" Width="32" Path="/Assets/Icons/Web/selected-web.svg"
+                     Margin="0 0 25 0" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" FontSize="32" Text="Mock Endpoints" Foreground="{StaticResource MockEndpointsSolidColorBrush}"
+                           FontWeight="Bold" VerticalAlignment="Center"/>
+            </Grid>
+        
+            <StackPanel Margin="30">
+                <TextBlock FontSize="16" Text="Mock endpoints are easy to startup servers that can send pre-defined content to webpages, imitating client-server communication so that the need for a server does not hinder the webpage development experience." Foreground="#b3b3b3"
+                           TextWrapping="WrapWithOverflow"
+                           VerticalAlignment="Center"/>
+                <TextBlock FontSize="16" Text="Instances will not run while this app is not open, but the app will remember if an instance was running or not." Foreground="#b3b3b3"
+                           TextWrapping="WrapWithOverflow" Margin="0 20 0 0"
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <Grid Grid.Row="1" Margin="25 0" RowDefinitions="Auto, *">
+            <Grid Grid.Row="0" ColumnDefinitions="2*, *, 3*" Margin="0 0 0 10">
+                <TextBox Grid.Column="0" Watermark="Search by name..." Classes="DefaultBTextBox"
+                         SelectionForegroundBrush="#fff" TextChanged="OnFilterTextChanged"
+                         Text="{Binding FilterText, Mode=TwoWay}"/>
+                
+                <Grid HorizontalAlignment="Right" Grid.Column="2" ColumnDefinitions="*, 5, *, 5, *">
+                    
+                    <!-- Create new mock endpoint button. -->
+                    <Button Classes="DefaultBButton" Grid.Column="0"
+                            Command="{Binding CreateInstanceCommand}"><TextBlock TextAlignment="Center" Text="Create New"/></Button>
+                    
+                    <!-- Stop all mock endpoints button. -->
+                    <Button Classes="DefaultBButton" Grid.Column="2"
+                            Command="{Binding StopAllMockEndpointsCommand}"><TextBlock TextAlignment="Center" Text="Stop All"/></Button>
+                    
+                    <!-- Restart all mock endpoints button. -->
+                    <Button Classes="DefaultBButton" Grid.Column="4"
+                            Command="{Binding RestartAllMockEndpointsCommand}"><TextBlock TextAlignment="Center" Text="Restart All"/></Button>
+                    
+                </Grid>
+            </Grid>
+            
+            <Border Grid.Row="1" Background="#172342" BorderBrush="{StaticResource MockEndpointsSolidColorBrush}"
+                    BorderThickness="2 2 2 0" CornerRadius="10 10 0 0">
+                <ItemsControl ItemsSource="{Binding FilteredMockEndpoints}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="#161d35" Margin="12 12 12 0" Padding="15" CornerRadius="10" BorderBrush="{StaticResource MockEndpointsSolidColorBrush}"
+                                BorderThickness="2">
+                                <Grid ColumnDefinitions="375, 50, Auto, 10, Auto, *">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Foreground="{StaticResource MockEndpointsSolidColorBrush}" FontSize="16" FontWeight="DemiBold"
+                                                   Text="{Binding Name}" VerticalAlignment="Center"/>
+                                        <TextBlock Foreground="#999" FontSize="16" FontWeight="DemiBold"
+                                                   Margin="10 0 0 0" Text="{Binding Port}" VerticalAlignment="Center"/>
+                                        <TextBlock Foreground="{StaticResource MockEndpointsSolidColorBrush}" FontSize="16"
+                                                   FontWeight="DemiBold" Text="{Binding Route}" VerticalAlignment="Center"
+                                                   Margin="10 0 0 0"/>
+                                    </StackPanel>
+                                
+                                    <!-- Continue active instance button. -->
+                                    <Button Classes="ClearButton" Grid.Column="2" IsVisible="{Binding !Active}"
+                                            Command="{Binding ContinueCommand}">
+                                        <Svg Width="24" Path="/Assets/Icons/web_continue.svg"
+                                             VerticalAlignment="Center"/>
+                                    </Button>
+                                
+                                    <!-- Pause active instance button. -->
+                                    <Button Classes="ClearButton" Grid.Column="2" IsVisible="{Binding Active}"
+                                            Command="{Binding PauseCommand}">
+                                        <Svg Width="24" Path="/Assets/Icons/pause.svg"
+                                             VerticalAlignment="Center"/>
+                                    </Button>
+                                
+                                    <!-- Menu of instance button -->
+                                    <Button Classes="ClearButton" Grid.Column="4" Click="OnClickInstanceMenuButton">
+                                        <Button.ContextFlyout>
+                                            <MenuFlyout Placement="Pointer">
+                                                <MenuItem Header="Open in Browser" Command="{Binding OpenInBrowserCommand}"/>
+                                                <MenuItem Header="Edit Mock Endpoint" Command="{Binding EditMockEndpointCommand}"/>
+                                                <MenuItem Header="Delete Mock Endpoint" Command="{Binding DeleteMockEndpointCommand}"/>
+                                            </MenuFlyout>
+                                        </Button.ContextFlyout>
+                                        <Svg Width="24" Path="/Assets/Icons/menu.svg"
+                                             VerticalAlignment="Center"/>
+                                    </Button>
+                                
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Border>
+        </Grid>
+        
+    </Grid>
+</UserControl>

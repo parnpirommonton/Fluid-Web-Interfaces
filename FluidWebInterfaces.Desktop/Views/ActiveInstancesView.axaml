@@ -1,0 +1,121 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:FluidWebInterfaces.Desktop.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="FluidWebInterfaces.Desktop.Views.ActiveInstancesView"
+             x:DataType="viewModels:ActiveInstancesViewModel">
+    <Grid RowDefinitions="Auto, *" Background="#161d35">
+        
+        <StackPanel Grid.Row="0">
+            <Grid ColumnDefinitions="Auto, Auto, *" Margin="25">
+                <Svg Grid.Column="0" Width="32" Path="/Assets/Icons/Folder/selected-folder.svg"
+                     Margin="0 0 25 0" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" FontSize="32" Text="Active Instances" Foreground="{StaticResource ActiveInstancesSolidColorBrush}"
+                           FontWeight="Bold" VerticalAlignment="Center"/>
+            </Grid>
+        
+            <StackPanel Margin="30">
+                <TextBlock FontSize="16" Text="These are the instances that listen for updates in source folders and then compile them to the output folder when any edits have been made." Foreground="#b3b3b3"
+                           TextWrapping="WrapWithOverflow"
+                           VerticalAlignment="Center"/>
+                <TextBlock FontSize="16" Text="Instances will not run while this app is not open, but the app will remember if an instance was running or not." Foreground="#b3b3b3"
+                           TextWrapping="WrapWithOverflow" Margin="0 20 0 0"
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <Grid Grid.Row="1" Margin="25 0" RowDefinitions="Auto, *">
+            <Grid Grid.Row="0" ColumnDefinitions="2*, *, 3*" Margin="0 0 0 10">
+                <TextBox Grid.Column="0" Watermark="Search by name..." Classes="DefaultATextBox"
+                         SelectionForegroundBrush="#fff" TextChanged="OnFilterTextChanged"
+                         Text="{Binding FilterText}"/>
+                
+                <Grid HorizontalAlignment="Right" Grid.Column="2" ColumnDefinitions="*, 5, *, 5, *">
+                    
+                    <!-- Create new instance button. -->
+                    <Button Classes="DefaultAButton" Grid.Column="0"
+                            Command="{Binding CreateNewInstanceCommand}"><TextBlock TextAlignment="Center" Text="Create New"/></Button>
+                    
+                    <!-- Stop all instances button. -->
+                    <Button Classes="DefaultAButton" Grid.Column="2"
+                            Command="{Binding StopAllInstancesCommand}"><TextBlock TextAlignment="Center" Text="Stop All"/></Button>
+                    
+                    <!-- Restart all instances button. -->
+                    <Button Classes="DefaultAButton" Grid.Column="4"
+                            Command="{Binding RestartAllInstancesCommand}"><TextBlock TextAlignment="Center" Text="Restart All"/></Button>
+                    
+                </Grid>
+            </Grid>
+            
+            <Border Grid.Row="1" Background="#172342" BorderBrush="{StaticResource ActiveInstancesSolidColorBrush}"
+                    BorderThickness="2 2 2 0" CornerRadius="10 10 0 0">
+                <ItemsControl ItemsSource="{Binding FilteredActiveInstances}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="#161d35" Margin="12 12 12 0" Padding="15" CornerRadius="10" BorderBrush="{StaticResource ActiveInstancesSolidColorBrush}"
+                                    BorderThickness="2">
+                                <Grid ColumnDefinitions="200, 50, Auto, 10, Auto, *">
+                                    <TextBlock Foreground="{StaticResource ActiveInstancesSolidColorBrush}" Grid.Column="0" FontSize="16" FontWeight="DemiBold"
+                                               Text="{Binding Name}" VerticalAlignment="Center"/>
+                                    
+                                    <!-- Continue active instance button. -->
+                                    <Button Classes="ClearButton" Grid.Column="2" IsVisible="{Binding !Active}"
+                                            Command="{Binding ContinueCommand}">
+                                        <Svg Width="24" Path="/Assets/Icons/continue.svg"
+                                             VerticalAlignment="Center"/>
+                                    </Button>
+                                    
+                                    <!-- Pause active instance button. -->
+                                    <Button Classes="ClearButton" Grid.Column="2" IsVisible="{Binding Active}"
+                                            Command="{Binding PauseCommand}">
+                                        <Svg Width="24" Path="/Assets/Icons/pause.svg"
+                                             VerticalAlignment="Center"/>
+                                    </Button>
+                                    
+                                    <!-- Menu of instance button -->
+                                    <Button Classes="ClearButton" Grid.Column="4" Click="OnClickInstanceMenuButton">
+                                        <Button.ContextFlyout>
+                                            <MenuFlyout Placement="Pointer">
+                                                <MenuItem Command="{Binding ToggleRestartOnErrorCommand}">
+                                                    <MenuItem.Header>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Svg Width="16" Height="16" Margin="0 0 5 0" Path="/Assets/Icons/tick.svg"
+                                                                       IsVisible="{Binding RestartOnError}"/>
+                                                            <TextBlock Text="Auto restart on error"/>
+                                                        </StackPanel>
+                                                    </MenuItem.Header>
+                                                </MenuItem>
+                                                <MenuItem Command="{Binding ToggleShowErrorMessagesCommand}">
+                                                    <MenuItem.Header>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Svg Width="16" Height="16" Margin="0 0 5 0" Path="/Assets/Icons/tick.svg"
+                                                                 IsVisible="{Binding ShowErrorMessages}"/>
+                                                            <TextBlock Text="Show error messages"/>
+                                                        </StackPanel>
+                                                    </MenuItem.Header>
+                                                </MenuItem>
+                                                <MenuItem Header="Open source folder in File Explorer" Command="{Binding OpenFolderCommand}"
+                                                          CommandParameter="{Binding SourcePath}"/>
+                                                <MenuItem Header="Open output folder in File Explorer" Command="{Binding OpenFolderCommand}"
+                                                          CommandParameter="{Binding CompiledPath}"/>
+                                                <MenuItem Header="Edit instance" Command="{Binding EditNewInstanceCommand}"
+                                                          CommandParameter="{Binding CompiledPath}"/>
+                                                <MenuItem Header="Delete Instance" Command="{Binding ShutdownCommand}"/>
+                                            </MenuFlyout>
+                                        </Button.ContextFlyout>
+                                        <Svg Width="24" Path="/Assets/Icons/menu.svg"
+                                             VerticalAlignment="Center"/>
+                                    </Button>
+                                    
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Border>
+        </Grid>
+        
+    </Grid>
+</UserControl>
