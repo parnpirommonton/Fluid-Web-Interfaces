@@ -15,6 +15,7 @@ The user can type wherever they would normally type out text within a HTML docum
 
 ```javascript
 // This is JavaScript code.
+
 let WebpageTitle = "This is my Webpage!";
 ```
 

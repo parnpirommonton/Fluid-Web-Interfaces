@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FluidWebInterfaces.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+504baca51f97c7194c0d26cb995abafee07b3888")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31c84d138586c7f6173b6aef86910d0a4415bd98")]
 [assembly: System.Reflection.AssemblyProductAttribute("FluidWebInterfaces.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FluidWebInterfaces.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
