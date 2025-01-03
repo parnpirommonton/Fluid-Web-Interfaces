@@ -1,14 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluidWebInterfaces.Compiler.Core", "FluidWebInterfaces.Compiler.Core\FluidWebInterfaces.Compiler.Core.csproj", "{9FF9EBCB-9489-4A92-9CE8-B92BEDE6103F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A9E0E128-F84A-4664-BA9C-E536D29508B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluidWebInterfaces.Compiler.Playground", "FluidWebInterfaces.Compiler.Playground\FluidWebInterfaces.Compiler.Playground.csproj", "{4F4F48D9-FB6B-4E7A-BD51-3A8D0EC8E636}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluidWebInterfaces.Core", "src\FluidWebInterfaces.Core\FluidWebInterfaces.Core.csproj", "{DEE2C6DB-E0BE-4ABA-A8FC-27FAA887ADF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluidWebInterfaces.Desktop", "FluidWebInterfaces.Desktop\FluidWebInterfaces.Desktop.csproj", "{904E2F85-3851-4A18-997A-604CF6DF9BBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluidWebInterfaces.Compiler.Core", "src\FluidWebInterfaces.Compiler.Core\FluidWebInterfaces.Compiler.Core.csproj", "{4AE64DA7-2616-493F-997D-B248B774BDA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluidWebInterfaces.Core", "FluidWebInterfaces.Core\FluidWebInterfaces.Core.csproj", "{79A10D26-FB78-4DC4-B0C8-9D321BC2ADC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluidWebInterfaces.Compiler.Playground", "src\FluidWebInterfaces.Compiler.Playground\FluidWebInterfaces.Compiler.Playground.csproj", "{C0923555-4C14-4145-A3B9-163688E14F81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluidWebInterfaces.Desktop.Installer", "FluidWebInterfaces.Desktop.Installer\FluidWebInterfaces.Desktop.Installer.csproj", "{3ADE1012-5A44-4FD8-AE68-572426C148D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluidWebInterfaces.Desktop", "src\FluidWebInterfaces.Desktop\FluidWebInterfaces.Desktop.csproj", "{A289033B-3C64-41C9-990C-7EB4497F245C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluidWebInterfaces.Desktop.Installer", "src\FluidWebInterfaces.Desktop.Installer\FluidWebInterfaces.Desktop.Installer.csproj", "{C0A72028-DABC-4941-A40A-A4851F9B2043}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,25 +18,32 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9FF9EBCB-9489-4A92-9CE8-B92BEDE6103F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9FF9EBCB-9489-4A92-9CE8-B92BEDE6103F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9FF9EBCB-9489-4A92-9CE8-B92BEDE6103F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9FF9EBCB-9489-4A92-9CE8-B92BEDE6103F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F4F48D9-FB6B-4E7A-BD51-3A8D0EC8E636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F4F48D9-FB6B-4E7A-BD51-3A8D0EC8E636}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F4F48D9-FB6B-4E7A-BD51-3A8D0EC8E636}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F4F48D9-FB6B-4E7A-BD51-3A8D0EC8E636}.Release|Any CPU.Build.0 = Release|Any CPU
-		{904E2F85-3851-4A18-997A-604CF6DF9BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{904E2F85-3851-4A18-997A-604CF6DF9BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{904E2F85-3851-4A18-997A-604CF6DF9BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{904E2F85-3851-4A18-997A-604CF6DF9BBE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79A10D26-FB78-4DC4-B0C8-9D321BC2ADC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79A10D26-FB78-4DC4-B0C8-9D321BC2ADC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79A10D26-FB78-4DC4-B0C8-9D321BC2ADC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79A10D26-FB78-4DC4-B0C8-9D321BC2ADC8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3ADE1012-5A44-4FD8-AE68-572426C148D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3ADE1012-5A44-4FD8-AE68-572426C148D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3ADE1012-5A44-4FD8-AE68-572426C148D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3ADE1012-5A44-4FD8-AE68-572426C148D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE2C6DB-E0BE-4ABA-A8FC-27FAA887ADF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE2C6DB-E0BE-4ABA-A8FC-27FAA887ADF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE2C6DB-E0BE-4ABA-A8FC-27FAA887ADF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE2C6DB-E0BE-4ABA-A8FC-27FAA887ADF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE64DA7-2616-493F-997D-B248B774BDA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE64DA7-2616-493F-997D-B248B774BDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE64DA7-2616-493F-997D-B248B774BDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE64DA7-2616-493F-997D-B248B774BDA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0923555-4C14-4145-A3B9-163688E14F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0923555-4C14-4145-A3B9-163688E14F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0923555-4C14-4145-A3B9-163688E14F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0923555-4C14-4145-A3B9-163688E14F81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A289033B-3C64-41C9-990C-7EB4497F245C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A289033B-3C64-41C9-990C-7EB4497F245C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A289033B-3C64-41C9-990C-7EB4497F245C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A289033B-3C64-41C9-990C-7EB4497F245C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0A72028-DABC-4941-A40A-A4851F9B2043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0A72028-DABC-4941-A40A-A4851F9B2043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0A72028-DABC-4941-A40A-A4851F9B2043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0A72028-DABC-4941-A40A-A4851F9B2043}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DEE2C6DB-E0BE-4ABA-A8FC-27FAA887ADF0} = {A9E0E128-F84A-4664-BA9C-E536D29508B3}
+		{4AE64DA7-2616-493F-997D-B248B774BDA8} = {A9E0E128-F84A-4664-BA9C-E536D29508B3}
+		{C0923555-4C14-4145-A3B9-163688E14F81} = {A9E0E128-F84A-4664-BA9C-E536D29508B3}
+		{A289033B-3C64-41C9-990C-7EB4497F245C} = {A9E0E128-F84A-4664-BA9C-E536D29508B3}
+		{C0A72028-DABC-4941-A40A-A4851F9B2043} = {A9E0E128-F84A-4664-BA9C-E536D29508B3}
 	EndGlobalSection
 EndGlobal

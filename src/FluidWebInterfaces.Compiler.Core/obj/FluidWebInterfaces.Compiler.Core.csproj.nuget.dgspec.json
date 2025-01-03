@@ -1,0 +1,118 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/parnpirommonton/RiderProjects/Fluid-Web-Interfaces/src/FluidWebInterfaces.Compiler.Core/FluidWebInterfaces.Compiler.Core.csproj": {}
+  },
+  "projects": {
+    "/home/parnpirommonton/RiderProjects/Fluid-Web-Interfaces/src/FluidWebInterfaces.Compiler.Core/FluidWebInterfaces.Compiler.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/parnpirommonton/RiderProjects/Fluid-Web-Interfaces/src/FluidWebInterfaces.Compiler.Core/FluidWebInterfaces.Compiler.Core.csproj",
+        "projectName": "FluidWebInterfaces.Compiler.Core",
+        "projectPath": "/home/parnpirommonton/RiderProjects/Fluid-Web-Interfaces/src/FluidWebInterfaces.Compiler.Core/FluidWebInterfaces.Compiler.Core.csproj",
+        "packagesPath": "/home/parnpirommonton/.nuget/packages/",
+        "outputPath": "/home/parnpirommonton/RiderProjects/Fluid-Web-Interfaces/src/FluidWebInterfaces.Compiler.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/parnpirommonton/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/parnpirommonton/RiderProjects/Fluid-Web-Interfaces/src/FluidWebInterfaces.Core/FluidWebInterfaces.Core.csproj": {
+                "projectPath": "/home/parnpirommonton/RiderProjects/Fluid-Web-Interfaces/src/FluidWebInterfaces.Core/FluidWebInterfaces.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/parnpirommonton/.dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/parnpirommonton/RiderProjects/Fluid-Web-Interfaces/src/FluidWebInterfaces.Core/FluidWebInterfaces.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/parnpirommonton/RiderProjects/Fluid-Web-Interfaces/src/FluidWebInterfaces.Core/FluidWebInterfaces.Core.csproj",
+        "projectName": "FluidWebInterfaces.Core",
+        "projectPath": "/home/parnpirommonton/RiderProjects/Fluid-Web-Interfaces/src/FluidWebInterfaces.Core/FluidWebInterfaces.Core.csproj",
+        "packagesPath": "/home/parnpirommonton/.nuget/packages/",
+        "outputPath": "/home/parnpirommonton/RiderProjects/Fluid-Web-Interfaces/src/FluidWebInterfaces.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/parnpirommonton/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/parnpirommonton/.dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

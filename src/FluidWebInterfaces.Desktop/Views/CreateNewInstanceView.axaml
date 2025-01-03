@@ -1,0 +1,85 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:FluidWebInterfaces.Desktop.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="400"
+        x:Class="FluidWebInterfaces.Desktop.Views.CreateNewInstanceView"
+        x:DataType="viewModels:CreateNewInstanceViewModel"
+        Title="Create New Instance"
+        Width="600" Height="400" MaxWidth="600" MaxHeight="400" MinWidth="600" MinHeight="400"
+        WindowStartupLocation="CenterOwner">
+        
+        <Grid Background="#161d35">
+            
+            <StackPanel Margin="20">
+                
+                <Grid ColumnDefinitions="Auto, Auto, *">
+                    <Svg Grid.Column="0" Width="24" Path="/Assets/Icons/Folder/selected-folder.svg"
+                         Margin="0 0 25 0" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" FontSize="20" Text="Create New Instance" Foreground="{StaticResource ActiveInstancesSolidColorBrush}"
+                               FontWeight="Bold" VerticalAlignment="Center"/>
+                </Grid>
+                
+                <TextBlock FontSize="14" Margin="0 20 0 0"
+                           Text="These are the instances that listen for updates in source folders and then compile them to the output folder when any edits have been made." Foreground="#b3b3b3"
+                           TextWrapping="WrapWithOverflow"
+                           VerticalAlignment="Center"/>
+                
+                <StackPanel Margin="0 20 0 0">
+                    
+                    <TextBlock Foreground="{StaticResource ActiveInstancesSolidColorBrush}" FontSize="12"
+                               Text="Instance Name" Margin="0 5 0 0"/>
+                    <TextBox Margin="0 2 0 0" Classes="DefaultATextBox" Watermark="Instance Name"
+                             Text="{Binding Name}" FontSize="14"/>
+                    
+                    <TextBlock Foreground="{StaticResource ActiveInstancesSolidColorBrush}" FontSize="12"
+                               Text="Source Folder" Margin="0 5 0 0"/>
+                    <Grid ColumnDefinitions="*, Auto" Margin="0 2 0 0">
+                        <TextBox x:Name="SourceFolderTextBox" Grid.Column="0" Classes="DefaultATextBox" Watermark="Source Folder"
+                                 Text="{Binding SourceFolder, Mode=TwoWay}" FontSize="14"/>
+                        <Button Click="OnClickSourceFolderButton" Grid.Column="1" Classes="DefaultAButton" Margin="5 0 0 0">
+                            <Svg Width="16" Height="16" VerticalAlignment="Center"
+                                 Path="/Assets/Icons/Folder/selected-folder.svg"/>
+                        </Button>
+                    </Grid>
+                    
+                    <TextBlock Foreground="{StaticResource ActiveInstancesSolidColorBrush}" FontSize="12"
+                               Text="Output Folder" Margin="0 5 0 0"/>
+                    <Grid ColumnDefinitions="*, Auto" Margin="0 2 0 0">
+                        <TextBox x:Name="OutputFolderTextBox" Grid.Column="0" Classes="DefaultATextBox" Watermark="Output Folder"
+                                 Text="{Binding OutputFolder, Mode=TwoWay}" FontSize="14"/>
+                        <Button Click="OnClickOutputFolderButton" Grid.Column="1" Classes="DefaultAButton" Margin="5 0 0 0">
+                            <Svg Width="16" Height="16" VerticalAlignment="Center"
+                                 Path="/Assets/Icons/Folder/selected-folder.svg"/>
+                        </Button>
+                    </Grid>
+                    
+                    <Grid ColumnDefinitions="*, 20 *, *">
+                        <StackPanel Grid.Column="0" Margin="0 10 0 0" Orientation="Horizontal">
+                            <CheckBox Classes="DefaultACheckBox" Margin="0" IsChecked="{Binding RestartOnError, Mode=TwoWay}" Cursor="Hand"/>
+                            <TextBlock VerticalAlignment="Center" Text="Auto restart on error"
+                                       Foreground="{StaticResource ActiveInstancesSolidColorBrush}" FontSize="14"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Margin="0 10 0 0" Orientation="Horizontal">
+                            <CheckBox Classes="DefaultACheckBox" Margin="0" IsChecked="{Binding ShowErrorMessages, Mode=TwoWay}"/>
+                            <TextBlock VerticalAlignment="Center" Text="Show error messages"
+                                       Foreground="{StaticResource ActiveInstancesSolidColorBrush}" FontSize="14"/>
+                        </StackPanel>
+                    </Grid>
+                    
+                    <TextBlock Text="{Binding IssueMessage}" Foreground="IndianRed"
+                               FontSize="14" Margin="0 5 0 0"/>
+                    
+                    <Button Classes="DefaultAButton" Margin="0 5 0 0"
+                            Click="OnClickCreateButton" FontSize="14">
+                        <TextBlock TextAlignment="Center" Text="Create"/>
+                    </Button>
+                    
+                </StackPanel>
+                
+            </StackPanel>
+                
+        </Grid>
+        
+</Window>

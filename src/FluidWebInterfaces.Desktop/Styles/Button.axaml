@@ -1,0 +1,88 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!-- Add Controls for Previewer Here -->
+            
+            <StackPanel>
+                
+                <!-- Default A Button -->
+                <Button Classes="DefaultAButton"><TextBlock TextAlignment="Center" Text="Create New"/></Button>
+            
+                <!-- Clear Button -->
+                <Button Classes="ClearButton"><TextBlock TextAlignment="Center" Text="Hyperlink"/></Button>
+                
+            </StackPanel>
+            
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Add Styles Here -->
+    
+    <Style Selector="Button.DefaultAButton">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ActiveInstancesSolidColorBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Foreground" Value="{StaticResource ActiveInstancesSolidColorBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style Selector="Button.DefaultAButton:pointerover /template/ ContentPresenter">
+        <Setter Property="Foreground" Value="{StaticResource ActiveInstancesSolidColorBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ActiveInstancesSolidColorBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Opacity" Value="0.8"/>
+    </Style>
+    <Style Selector="Button.DefaultAButton:disabled /template/ ContentPresenter">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ActiveInstancesSolidColorBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Foreground" Value="{StaticResource ActiveInstancesSolidColorBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Opacity" Value="0.6"/>
+    </Style>
+    
+    <Style Selector="Button.ClearButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+    <Style Selector="Button.ClearButton:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    
+    <Style Selector="Button.DefaultBButton">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MockEndpointsSolidColorBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Foreground" Value="{StaticResource MockEndpointsSolidColorBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style Selector="Button.DefaultBButton:pointerover /template/ ContentPresenter">
+        <Setter Property="Foreground" Value="{StaticResource MockEndpointsSolidColorBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MockEndpointsSolidColorBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Opacity" Value="0.8"/>
+    </Style>
+    <Style Selector="Button.DefaultBButton:disabled /template/ ContentPresenter">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MockEndpointsSolidColorBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Foreground" Value="{StaticResource MockEndpointsSolidColorBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Opacity" Value="0.6"/>
+    </Style>
+    
+</Styles>
