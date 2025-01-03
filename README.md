@@ -2,7 +2,7 @@
 
 A HTML parser that allows for custom syntax to be used within HTML and a Website compiler that compiles directories using this custom HTML syntax into plain HTML in the output directory. A desktop app is also included which helps with interaction with the compiler. 
 
-## The HTML Parser (DynamicWebClientParser)
+## The HTML Parser
 
 This is the parser that reads the source HTML file with the custom syntax and converts it into a class structure so that the compiler has an easier time creating the output HTML file.
 
