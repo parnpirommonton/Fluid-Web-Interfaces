@@ -41,7 +41,8 @@ The following syntax is valid.
 
 #### Render Command
 
-This command is used to inject partial HTML files (which are marked by beginning a HTML file name with an underscore '_') into the current HTML file.
+This command will often be used to inject partial HTML files (which are marked by beginning a HTML file name with an underscore '_') into the current HTML file.
+This command can be used to inject fully implemented webpages if needed, however.
 
 The syntax for the command is as follows:
 
@@ -83,7 +84,9 @@ Again, these the evaluation can be refreshed by using the 'onStateChanged()' fun
 - For Statements
 - Import Command
 
+## The Website Compiler
 
+The compiler searches directories for HTML files to compile and files to copy over. Any files beginning with an underscore '_' will be ignored.
 
 
 
