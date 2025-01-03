@@ -36,8 +36,11 @@ The following syntax is valid.
 <!-- This will render the date. -->
 <p>{new Date()}</p>
 
-<!-- This is will render the output of the function. -->
+<!-- This will render the output of the function. -->
 <p>{someFunction()}</p>
+
+<!-- This will render the stored value in the localStorage. -->
+<p>localStorage.getItem("LastVisited")</p>
 ```
 
 #### Render Command
