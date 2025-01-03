@@ -1,3 +1,4 @@
+using System.IO;
 using FluidWebInterfaces.Core.Logging;
 using FluidWebInterfaces.Desktop.Services;
 using FluidWebInterfaces.Desktop.ViewModels;
@@ -13,11 +14,15 @@ public static class ServiceCollectionExtensions
         services.AddSingleton(provider => provider);
         
         // Add logging to application.
-        services.AddTransient<ILogger>(sp =>
+        services.AddTransient<ILogger>(_ =>
         {
+            var logLevel = (LogLevel)int.Parse(
+                File.ReadAllText(PersistenceLocations.LogLevelFile));
+            
             var logger = new Logger();
             logger.AddConsoleLogging();
-            logger.FilterToLevel(LogLevel.Information);
+            logger.FilterToLevel(logLevel);
+            logger.AddFileLogging(PersistenceLocations.LogOutputFile);
 
             return logger;
         });
